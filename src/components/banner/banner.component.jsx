@@ -1,3 +1,5 @@
+import {appName} from "../../constants/constants";
+
 const Banner = () => {
   return (
     <div className="sidebar-header flex items-center justify-center py-4">
@@ -10,7 +12,9 @@ const Banner = () => {
               clipRule="evenodd"
             />
           </svg>
-          <span className="leading-10 text-gray-100 text-2xl font-bold ml-1 uppercase">Brandname</span>
+          <span className="leading-10 text-gray-100 text-2xl font-bold ml-1 uppercase">
+            {appName}
+          </span>
         </a>
       </div>
     </div>
