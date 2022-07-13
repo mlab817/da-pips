@@ -3,7 +3,20 @@ import SidebarItem from "../sidebar-item/sidebar-item.component";
 import SidebarHeader from "../sidebar-header/sidebar-header.component";
 
 import avatar from '../../assets/avatar.jpg'
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+
+const links = [
+  {
+    icon: 'HomeIcon',
+    label: 'Home',
+    to: '/'
+  },
+  {
+    icon: 'DocumentIcon',
+    label: 'Program Summary',
+    to: '/program-summary'
+  }
+]
 
 const Sidebar = () => {
   return (
@@ -19,31 +32,9 @@ const Sidebar = () => {
         <ul className="flex flex-col w-full">
           <SidebarHeader title="Menu" />
 
-          <SidebarItem />
-
-          <li className="my-px">
-            <Link
-              to="/program-summary"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-              </span>
-              <span className="ml-3">Program Summary</span>
-            </Link>
-          </li>
+          {
+            links.map(({ to, label, icon }, index) => <SidebarItem to={to} label={label} icon={icon} />)
+          }
 
           <li className="my-px">
             <Link
