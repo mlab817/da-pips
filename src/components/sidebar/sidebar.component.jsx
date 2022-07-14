@@ -37,7 +37,12 @@ const links = [
     to: '/directory'
   },
   {
-    icon: 'UsersIcon',
+    icon: 'UserGroupIcon',
+    label: 'Teams',
+    to: '/teams'
+  },
+  {
+    icon: 'UserIcon',
     label: 'Users',
     to: '/users'
   },
@@ -50,6 +55,11 @@ const links = [
     icon: 'TrendingUpIcon',
     label: 'Tracker',
     to: '/tracker'
+  },
+  {
+    icon: 'DocumentReportIcon',
+    label: 'Reports',
+    to: '/reports'
   },
   {
     icon: 'CogIcon',

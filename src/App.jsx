@@ -7,19 +7,23 @@ import ProjectsPage from './pages/projects.page';
 import UsersPage from './pages/users.page';
 import RegisterPage from './pages/register.page';
 import TrackerPage from './pages/tracker.page';
+import ReportsPage from "./pages/reports.page";
+import TeamsPage from "./pages/teams.page";
 
 const App = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<HomePage />} />
-      <Route path="/program-summary" element={<HomePage />} />
-      <Route path="/activities" element={<ActivitiesPage />} />
-      <Route path="/programs" element={<ProgramsPage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/users" element={<UsersPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/tracker" element={<TrackerPage />} />
-      <Route path="/directory" element={<DirectoryPage />} />
+      <Route exact path="/" element={<HomePage/>}/>
+      <Route path="/program-summary" element={<HomePage/>}/>
+      <Route path="/activities" element={<ActivitiesPage/>}/>
+      <Route path="/programs" element={<ProgramsPage/>}/>
+      <Route path="/projects" element={<ProjectsPage/>}/>
+      <Route path="/users" element={<UsersPage/>}/>
+      <Route path="/teams" element={<TeamsPage/>}/>
+      <Route path="/register" element={<RegisterPage/>}/>
+      <Route path="/tracker" element={<TrackerPage/>}/>
+      <Route path="/reports" element={<ReportsPage/>}/>
+      <Route path="/directory" element={<DirectoryPage/>}/>
     </Routes>
   )
 }

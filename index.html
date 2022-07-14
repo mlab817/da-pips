@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Mark Lester A. Bolotaolo" />
     <title>PIPS</title>
   </head>
   <body>
@@ -16,7 +17,7 @@
 
     <script>
       const chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "109046728540725");
+      chatbox.setAttribute("page_id", "105049522281554");
       chatbox.setAttribute("attribution", "biz_inbox");
 
       window.fbAsyncInit = function() {
@@ -27,12 +28,13 @@
       };
 
       (function(d, s, id) {
-        let js, fjs = d.getElementsByTagName(s)[0];
+        var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+
   </body>
 </html>

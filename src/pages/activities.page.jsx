@@ -36,19 +36,20 @@ const ActivitiesPage = () => {
 	return (
 		<MainLayout>
 			<PageTitle title={`${activeTab} on National Rice Program`} />
+
+			{/*<div className="grid grid-cols-6 gap-4">*/}
+			{/*	{*/}
+			{/*		subprograms.map((sp, index) => (*/}
+			{/*			<Card key={index} onClick={() => handleClick(sp)}>*/}
+			{/*				<h2>*/}
+			{/*					{sp}*/}
+			{/*				</h2>*/}
+			{/*			</Card>*/}
+			{/*		))*/}
+			{/*	}*/}
+			{/*</div>*/}
+
 			<PageContent>
-				<div className="grid grid-cols-6 gap-4">
-					{
-						subprograms.map((sp, index) => (
-							<Card key={index} onClick={() => handleClick(sp)}>
-								<h2>
-									{sp}
-								</h2>
-							</Card>
-						))
-					}
-				</div>
-				
 				<table className="table-auto border border-collapse mt-4">
 					<thead>
 						<tr className="bg-indigo-700 text-white">
@@ -69,25 +70,25 @@ const ActivitiesPage = () => {
 								<tr key={index} className="border">
 									<td className="border px-1 py-1">{activity}</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="border px-1 py-1">
-										<input className="w-full border-0 text-right px-1 py-1" type="text"/>
+										<input className="border-0 text-right px-1 py-1" type="text"/>
 									</td>
 									<td className="px-2 py-1 text-center flex flex-row">
 										<button className="px-2 py-1 bg-indigo-700 text-white rounded hover:ring-2">Update</button>
@@ -111,7 +112,6 @@ const ActivitiesPage = () => {
 						</tr>
 					</tfoot>
 				</table>
-
 			</PageContent>
 		</MainLayout>
 	)
