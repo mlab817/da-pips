@@ -6,6 +6,7 @@ import ProgramsPage from './pages/programs.page';
 import ProjectsPage from './pages/projects.page';
 import UsersPage from './pages/users.page';
 import RegisterPage from './pages/register.page';
+import TrackerPage from './pages/tracker.page';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/users" element={<UsersPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/tracker" element={<TrackerPage />} />
       <Route path="/directory" element={<DirectoryPage />} />
     </Routes>
   )

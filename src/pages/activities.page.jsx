@@ -40,7 +40,7 @@ const ActivitiesPage = () => {
 				<div className="grid grid-cols-6 gap-4">
 					{
 						subprograms.map((sp, index) => (
-							<Card onClick={() => handleClick(sp)}>
+							<Card key={index} onClick={() => handleClick(sp)}>
 								<h2>
 									{sp}
 								</h2>
@@ -98,15 +98,17 @@ const ActivitiesPage = () => {
 						}
 					</tbody>
 					<tfoot>
-						<td className="border px-1 py-1 text-center">Total</td>
-						<td className="border px-1 py-1 text-center">2023</td>
-						<td className="border px-1 py-1 text-center">2024</td>
-						<td className="border px-1 py-1 text-center">2025</td>
-						<td className="border px-1 py-1 text-center">2026</td>
-						<td className="border px-1 py-1 text-center">2027</td>
-						<td className="border px-1 py-1 text-center">2028</td>
-						<td className="border px-1 py-1 text-center">Total</td>
-						<td className="border px-1 py-1 text-center">Actions</td>
+						<tr>
+							<td className="border px-1 py-1 text-center">Total</td>
+							<td className="border px-1 py-1 text-center">2023</td>
+							<td className="border px-1 py-1 text-center">2024</td>
+							<td className="border px-1 py-1 text-center">2025</td>
+							<td className="border px-1 py-1 text-center">2026</td>
+							<td className="border px-1 py-1 text-center">2027</td>
+							<td className="border px-1 py-1 text-center">2028</td>
+							<td className="border px-1 py-1 text-center">Total</td>
+							<td className="border px-1 py-1 text-center">Actions</td>
+						</tr>
 					</tfoot>
 				</table>
 
