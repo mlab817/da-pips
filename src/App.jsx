@@ -9,12 +9,13 @@ import RegisterPage from './pages/register.page';
 import TrackerPage from './pages/tracker.page';
 import ReportsPage from "./pages/reports.page";
 import TeamsPage from "./pages/teams.page";
+import NewProgramPage from "./pages/new-program.page";
 
 const App = () => {
   return (
     <Routes>
       <Route exact path="/" element={<HomePage/>}/>
-      <Route path="/program-summary" element={<HomePage/>}/>
+      <Route path="/new-program" element={<NewProgramPage/>}/>
       <Route path="/activities" element={<ActivitiesPage/>}/>
       <Route path="/programs" element={<ProgramsPage/>}/>
       <Route path="/projects" element={<ProjectsPage/>}/>

@@ -3,7 +3,7 @@ import SidebarItem from "../sidebar-item/sidebar-item.component";
 import SidebarHeader from "../sidebar-header/sidebar-header.component";
 
 import avatar from '../../assets/avatar.jpg'
-import {Link} from "react-router-dom";
+import Icon from "../icon/icon.component";
 
 const links = [
   {
@@ -70,24 +70,39 @@ const links = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
-      <Banner />
+    <aside
+      className="w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
+      <Banner/>
 
       <div className="flex flex-col items-center">
-        <img src={avatar} className="h-32 w-32 object-cover inline-block rounded-full" alt="user avatar" />
+        <img src={avatar} className="h-32 w-32 object-cover inline-block rounded-full" alt="user avatar"/>
         <span className="mt-4 text-white">Banner Program</span>
       </div>
 
       <div className="sidebar-content px-4 py-6">
         <ul className="flex flex-col w-full">
-          <SidebarHeader title="Menu" />
+          <SidebarHeader title="Menu"/>
+
+          <li className="my-px">
+            <a
+              href="/new-program"
+              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300"
+            >
+              <span className="flex items-center justify-center text-lg">
+                <Icon icon="PlusIcon" className="h-6 w-6" aria-hidden="true"/>
+              </span>
+              <span className="ml-3">
+                Add Program
+              </span>
+            </a>
+          </li>
 
           {
-            links.map(({ to, label, icon }, index) => <SidebarItem key={index} to={to} label={label} icon={icon} />)
+            links.map(({to, label, icon}, index) => <SidebarItem key={index} to={to} label={label} icon={icon}/>)
           }
-          
-          <SidebarItem icon="LockOpenIcon" label="Logout" to="/logout" />
-          
+
+          <SidebarItem icon="LockOpenIcon" label="Logout" to="/logout"/>
+
         </ul>
       </div>
     </aside>
