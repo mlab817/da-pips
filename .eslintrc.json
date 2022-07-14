@@ -19,6 +19,7 @@
     ],
     "rules": {
         "no-unused-vars": "off",
-        "comma-dangle": "off"
+        "comma-dangle": "off",
+        "linebreak-style": "off"
     }
 }

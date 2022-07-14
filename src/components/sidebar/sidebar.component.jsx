@@ -3,7 +3,7 @@ import SidebarItem from "../sidebar-item/sidebar-item.component";
 import SidebarHeader from "../sidebar-header/sidebar-header.component";
 
 import avatar from '../../assets/avatar.jpg'
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const links = [
   {
@@ -13,12 +13,50 @@ const links = [
   },
   {
     icon: 'DocumentIcon',
-    label: 'Program Summary',
-    to: '/program-summary'
+    label: 'Activities',
+    to: '/activities'
+  },
+  {
+    icon: 'DocumentIcon',
+    label: 'Programs',
+    to: '/programs'
+  },
+  {
+    icon: 'DocumentIcon',
+    label: 'Projects',
+    to: '/projects'
+  },
+  {
+    icon: 'DocumentIcon',
+    label: 'PIP',
+    to: '/pip'
+  },
+  {
+    icon: 'PhoneIcon',
+    label: 'Directory',
+    to: '/directory'
+  },
+  {
+    icon: 'UsersIcon',
+    label: 'Users',
+    to: '/users'
+  },
+  {
+    icon: 'PlusCircleIcon',
+    label: 'Register',
+    to: '/register'
   }
 ]
 
 const Sidebar = () => {
+  const handleLogout = () => {
+    if (confirm('Are you sure you want to logout?')) {
+      alert('Logged out')
+    } else {
+      alert('Cancelled')
+    }
+  }
+  
   return (
     <aside className="w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
       <Banner />
@@ -33,128 +71,9 @@ const Sidebar = () => {
           <SidebarHeader title="Menu" />
 
           {
-            links.map(({ to, label, icon }, index) => <SidebarItem to={to} label={label} icon={icon} />)
+            links.map(({ to, label, icon }, index) => <SidebarItem key={index} to={to} label={label} icon={icon} />)
           }
-
-          <li className="my-px">
-            <Link
-              to="#"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path
-                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-                  />
-                </svg>
-              </span>
-              <span className="ml-3">Activities</span>
-            </Link>
-          </li>
-
-          <li className="my-px">
-            <Link
-              to="/users"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </span>
-              <span className="ml-3">Users</span>
-              <span
-                className="flex items-center justify-center text-xs text-red-500 font-semibold bg-red-100 h-6 px-2 rounded-full ml-auto"
-              >1k</span>
-            </Link>
-          </li>
-          <li className="my-px">
-            <Link
-              to="/profile"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-green-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </span>
-              <span className="ml-3">Add new</span>
-            </Link>
-          </li>
-
-          <li className="my-px">
-            <Link
-              to="#"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                </svg>
-              </span>
-              <span className="ml-3">Profile</span>
-            </Link>
-          </li>
-          <li className="my-px">
-            <Link
-              to="/notifications"
-              className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
-            >
-              <span className="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-6 w-6"
-                >
-                  <path
-                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                  />
-                </svg>
-              </span>
-              <span className="ml-3">Notifications</span>
-              <span
-                className="flex items-center justify-center text-xs text-red-500 font-semibold bg-red-100 h-6 px-2 rounded-full ml-auto"
-              >10</span>
-            </Link>
-          </li>
+          
           <li className="my-px">
             <Link
               to="/"
@@ -181,6 +100,8 @@ const Sidebar = () => {
           </li>
           <li className="my-px">
             <Link
+              onClick={handleLogout}
+              as="button"
               to="/"
               className="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700"
             >

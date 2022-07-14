@@ -16,7 +16,7 @@ const roles = [
   'ipd',
 ]
 
-const Home = () => {
+const HomePage = () => {
   return (
     <MainLayout>
       <select>
@@ -33,4 +33,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default HomePage;
