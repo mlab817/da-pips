@@ -1,8 +1,12 @@
+import {useState} from "react";
 import MainLayout from "../layouts/main/main.layout";
 import PageContent from "../components/page-content/page-content.component";
 import PageTitle from "../components/page-title/page-title.component";
-import {useState} from "react";
-import {PlusCircleIcon} from "@heroicons/react/solid";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  PlusCircleIcon
+} from "@heroicons/react/solid";
 
 const NewProgramPage = () => {
   const [currentPage, setCurrentPage] = useState(1)
@@ -19,7 +23,7 @@ const NewProgramPage = () => {
 
       <PageContent>
         {currentPage}
-        <div className="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+        <div className="container px-5 py-5 mx-auto flex flex-wrap flex-col">
 
           <div className="flex mx-auto flex-wrap mb-20">
             <a
@@ -62,16 +66,30 @@ const NewProgramPage = () => {
             </a>
           </div>
 
-          <div className="flex flex-col">
-            <img className="xl:w-1/4 lg:w-1/3 md:w-1/2 w-2/3 block mx-auto mb-10 object-cover object-center rounded"
-               alt="hero" src="https://dummyimage.com/720x600" />
-            <div className="flex flex-col text-center w-full">
-              <div className="relative mb-4">
-                <label htmlFor="full-name" className="leading-relaxed text-base text-gray-600">Program Name</label>
-                <input type="text" id="full-name" name="full-name"
-                       className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+          <div className="flex flex-row">
+            <div className="flex flex-col justify-center">
+              <button className="rounded-full bg-blue-100 px-6 py-6" onClick={handlePrevious}>
+                <ChevronLeftIcon className="h-4 w-4" />
+              </button>
+            </div>
+            <div className="flex flex-col flex-grow px-5 py-5">
+              <div className="flex flex-col">
+                <div className="flex flex-col text-center w-full">
+                  <div className="relative mb-4">
+                    <label htmlFor="full-name" className="leading-relaxed text-base text-gray-600">Program Name</label>
+                    <input type="text" id="full-name" name="full-name"
+                           className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  </div>
+                  <p className="lg:w-2/3 mx-auto leading-relaxed text-sm">
+
+                  </p>
+                </div>
               </div>
-              <p className="lg:w-2/3 mx-auto leading-relaxed text-sm">Description</p>
+            </div>
+            <div className="flex flex-col justify-center">
+              <button className="rounded-full bg-blue-100 px-6 py-6" onClick={handleNext}>
+                <ChevronRightIcon className="h-4 w-4" />
+              </button>
             </div>
           </div>
 

@@ -52,6 +52,11 @@ const links = [
     to: '/register'
   },
   {
+    icon: 'OfficeBuildingIcon',
+    label: 'Operating Units',
+    to: '/operating-units'
+  },
+  {
     icon: 'TrendingUpIcon',
     label: 'Tracker',
     to: '/tracker'
@@ -71,7 +76,7 @@ const links = [
 const Sidebar = () => {
   return (
     <aside
-      className="w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-indigo-500">
+      className="flex flex-col w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-primary-500">
       <Banner/>
 
       <div className="flex flex-col items-center">
