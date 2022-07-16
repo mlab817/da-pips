@@ -1,7 +1,6 @@
 import { useState } from "react";
 import {EyeIcon, EyeOffIcon, LockClosedIcon, UserIcon} from "@heroicons/react/solid";
 import {Link} from "react-router-dom";
-import LoginSvg from '../assets/undraw_secure_login_pdn4.svg'
 import googleSignIn from '../assets/google_sign_in.svg'
 import Footer from "../components/footer/footer.component";
 
@@ -36,9 +35,16 @@ const LoginPage = () => {
     <div>
       <section className="text-gray-600 body-font bg-gray-50 min-h-screen">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
-          <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <img src={LoginSvg} className="object-cover object-center rounded" alt="login" />
+          <div className="lg:w-1/2 md:w-1/2 md:pr-16 lg:pr-0 pr-0 flex flex-col">
+            <div className="pr-0">
+              <h1 className="title-font font-bold text-3xl text-primary-500">
+                Public Investment Programming System
+              </h1>
+              <p className="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify
+                hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+            </div>
           </div>
+
           <div className="lg:w-2/6 md:w-1/2 bg-white shadow rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <label htmlFor="username" className="leading-7 text-sm text-gray-600">Username</label>
             <div className="relative mb-4">
