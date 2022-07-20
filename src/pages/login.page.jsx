@@ -3,6 +3,7 @@ import {EyeIcon, EyeOffIcon, LockClosedIcon, UserIcon} from "@heroicons/react/so
 import {Link} from "react-router-dom";
 import googleSignIn from '../assets/google_sign_in.svg'
 import Footer from "../components/footer/footer.component";
+import Header from "../components/header/header.component";
 
 const defaultFormFields = {
   username: '',
@@ -33,6 +34,8 @@ const LoginPage = () => {
 
   return (
     <div>
+      <Header />
+
       <section className="text-gray-600 body-font bg-gray-50 min-h-screen">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 md:w-1/2 md:pr-16 lg:pr-0 pr-0 flex flex-col">
