@@ -12,23 +12,33 @@ import NewProgramPage from "./pages/new-program.page";
 import LandingPage from "./pages/landing.page";
 import LoginPage from "./pages/login.page";
 import OperatingUnitsPage from "./pages/operating-units.page";
+import ProtectedRoute from "./components/protected-route/protected-route.component";
+import UnprotectedRoute from "./components/unprotected-route/unprotected-route.component";
+import DashboardPage from "./pages/dashboard.page";
 
 const App = () => {
   return (
     <Routes>
       <Route exact path="/" element={<LandingPage/>}/>
-      <Route path="/login" element={<LoginPage/>}/>
-      <Route path="/new-program" element={<NewProgramPage/>}/>
-      <Route path="/activities" element={<ActivitiesPage/>}/>
-      <Route path="/programs" element={<ProgramsPage/>}/>
-      <Route path="/projects" element={<ProjectsPage/>}/>
-      <Route path="/users" element={<UsersPage/>}/>
-      <Route path="/teams" element={<TeamsPage/>}/>
-      <Route path="/operating-units" element={<OperatingUnitsPage/>}/>
-      <Route path="/register" element={<RegisterPage/>}/>
-      <Route path="/tracker" element={<TrackerPage/>}/>
-      <Route path="/reports" element={<ReportsPage/>}/>
-      <Route path="/directory" element={<DirectoryPage/>}/>
+
+      <Route element={<UnprotectedRoute />}>
+        <Route path="/login" element={<LoginPage/>}/>
+      </Route>
+
+      <Route element={<ProtectedRoute />}>
+        <Route path="/dashboard" element={<DashboardPage/>}/>
+        <Route path="/new-program" element={<NewProgramPage/>}/>
+        <Route path="/activities" element={<ActivitiesPage/>}/>
+        <Route path="/programs" element={<ProgramsPage/>}/>
+        <Route path="/projects" element={<ProjectsPage/>}/>
+        <Route path="/users" element={<UsersPage/>}/>
+        <Route path="/teams" element={<TeamsPage/>}/>
+        <Route path="/operating-units" element={<OperatingUnitsPage/>}/>
+        <Route path="/register" element={<RegisterPage/>}/>
+        <Route path="/tracker" element={<TrackerPage/>}/>
+        <Route path="/reports" element={<ReportsPage/>}/>
+        <Route path="/directory" element={<DirectoryPage/>}/>
+      </Route>
     </Routes>
   )
 }

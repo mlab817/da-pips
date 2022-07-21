@@ -3,7 +3,7 @@ const OuSubprograms = ({ ous }) => {
 		<>
 			{
 				ous.map((ou, index) => (
-					<tr key={index}>
+					<tr key={index} className="border">
 						<td></td>
 						<td>{ou.name}</td>
 						<td></td>

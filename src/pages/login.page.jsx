@@ -1,16 +1,19 @@
-import { useState } from "react";
+import {useContext, useState} from "react";
 import {EyeIcon, EyeOffIcon, LockClosedIcon, UserIcon} from "@heroicons/react/solid";
 import {Link} from "react-router-dom";
 import googleSignIn from '../assets/google_sign_in.svg'
 import Footer from "../components/footer/footer.component";
 import Header from "../components/header/header.component";
+import {AuthContext} from "../contexts/auth.context";
 
 const defaultFormFields = {
-  username: '',
+  email: '',
   password: ''
 }
 
 const LoginPage = () => {
+  const { login } = useContext(AuthContext)
+
   const [formFields, setFormFields] = useState(defaultFormFields)
 
   const [showPassword, setShowPassword] = useState(false)
@@ -25,17 +28,15 @@ const LoginPage = () => {
   const toggleShowPassword = () => setShowPassword(!showPassword)
 
   const handleLogin = () => {
-    if (!formFields.username || !formFields.password) {
-      return alert('Please enter username and password')
+    if (!formFields.email || !formFields.password) {
+      return alert('Please enter email and password')
     }
 
-    console.log('handle login')
+    login(formFields)
   }
 
   return (
     <div>
-      <Header />
-
       <section className="text-gray-600 body-font bg-gray-50 min-h-screen">
         <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
           <div className="lg:w-1/2 md:w-1/2 md:pr-16 lg:pr-0 pr-0 flex flex-col">
@@ -49,18 +50,18 @@ const LoginPage = () => {
           </div>
 
           <div className="lg:w-2/6 md:w-1/2 bg-white shadow rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-            <label htmlFor="username" className="leading-7 text-sm text-gray-600">Username</label>
+            <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
             <div className="relative mb-4">
-              <input type="text" id="username" name="username"
+              <input type="text" id="email" name="email"
                      autoFocus
                      onChange={handleChange}
-                     placeholder="Username"
+                     placeholder="Email"
                      className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-10 leading-8 transition-colors duration-200 ease-in-out" />
               <UserIcon className="pointer-events-none w-6 h-6 absolute left-0 top-0 mt-2 ml-2 text-gray-500" />
             </div>
             <div className="flex flex-row items-center justify-between">
               <label htmlFor="password" className="leading-7 text-sm text-gray-600">Password</label>
-              <Link to="/reset" className="text-sm text-indigo-500">Forgot Password?</Link>
+              <Link to="/reset" className="text-sm text-indigo-500" tabIndex="-1">Forgot Password?</Link>
             </div>
             <div className="relative mb-4">
               <input type={`${showPassword ? 'text' : 'password'}`} id="password" name="password"

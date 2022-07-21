@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 import { getAnalytics } from 'firebase/analytics';
-import { getDatabase } from 'firebase/database';
-// TODO: Add SDKs for Firebase products that you want to use
+import { getFirestore } from 'firebase/firestore';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -10,6 +10,7 @@ import { getDatabase } from 'firebase/database';
 const firebaseConfig = {
   apiKey: 'AIzaSyCCcGsC8F2N2po-h4B4aOxTk96gozLDUZU',
   authDomain: 'da-pips2022.firebaseapp.com',
+  databaseURL: 'https://da-pips2022-default-rtdb.asia-southeast1.firebasedatabase.app',
   projectId: 'da-pips2022',
   storageBucket: 'da-pips2022.appspot.com',
   messagingSenderId: '730432979211',
@@ -18,8 +19,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
-const db = getDatabase(app);
+export const auth = getAuth(app);
 
-const analytics = getAnalytics(app);
+export const db = getFirestore(app);
+
+export const analytics = getAnalytics(app);

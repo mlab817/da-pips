@@ -8,8 +8,8 @@ import Icon from "../icon/icon.component";
 const links = [
   {
     icon: 'HomeIcon',
-    label: 'Home',
-    to: '/'
+    label: 'Dashboard',
+    to: '/dashboard'
   },
   {
     icon: 'DocumentIcon',

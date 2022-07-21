@@ -3,6 +3,7 @@
 /** https://tailwind.simeongriggs.dev to generate color palette */
 
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -36,6 +37,17 @@ module.exports = {
         "800": "#A75C06",
         "900": "#854905"
       }
+    },
+    fontSize: {
+      sm: ['10px', '18px'],
+      base: ['12px', '20px'],
+      lg: ['16px', '24px'],
+      xl: ['24px', '32px'],
+      '2xl': ['36px', '44px'],
+      '3xl': ['48px', '56px']
+    },
+    fontFamily: {
+      'sans': ['Catamaran', ...defaultTheme.fontFamily.sans]
     }
   },
   plugins: [
